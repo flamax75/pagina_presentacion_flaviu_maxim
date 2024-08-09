@@ -72,8 +72,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: flex-start;
+    /* Alineación modificada para dispositivos móviles */
     padding: 20px;
     margin-top: 60px;
     /* Margen superior para separar la carta del borde superior de la pantalla */
@@ -81,12 +81,14 @@ body {
 
 .presentation-letter {
     background-color: #000;
-    color: #bfbaba;
+    color: #fff;
     padding: 40px;
     text-align: center;
     border-radius: 10px;
     max-width: 800px;
     margin: 20px 0;
+    overflow-y: auto;
+    /* Permite desplazamiento vertical si el contenido es demasiado largo */
 }
 
 .presentation-letter p {
@@ -144,9 +146,19 @@ body {
 
 /* Ajustes para dispositivos pequeños */
 @media (max-width: 768px) {
+    .page-container {
+        margin-top: 20px;
+        /* Disminuir el margen superior en dispositivos móviles */
+        height: auto;
+        /* Permite que el contenido crezca según sea necesario */
+    }
+
     .presentation-letter {
         padding: 20px;
+        /* Reducir padding para móviles */
         font-size: 16px;
+        max-width: 100%;
+        /* Asegura que la carta ocupe todo el ancho disponible en móviles */
     }
 
     .photo {
